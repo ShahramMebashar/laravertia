@@ -9,7 +9,7 @@
         @vite(['resources/scripts/app.ts', "resources/views/pages/{$page['component']}.vue"])
         @inertiaHead
     </head>
-    <body class="font-sans antialiased h-full bg-white dark:bg-gray-900">
+    <body class="font-sans antialiased h-full bg-gray-50 dark:bg-gray-900">
         <script>
             var theme = localStorage.getItem('vueuse-color-scheme') || 'auto';
             if(theme === 'dark') {

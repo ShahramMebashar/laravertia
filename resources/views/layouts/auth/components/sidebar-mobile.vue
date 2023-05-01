@@ -68,7 +68,7 @@ const handleClose = () => {
                         </TransitionChild>
                         <!-- Sidebar component -->
                         <div
-                            class="flex grow flex-col gap-y-5 overflow-y-auto overflow-x-hidden border-e px-6 pb-4 ring-1 ring-white/10 dark:border-gray-800">
+                            class="flex grow flex-col gap-y-5 overflow-y-auto overflow-x-hidden border-e px-6 pb-4 ring-1 ring-white/10 dark:bg-gray-950 dark:border-gray-800">
                             <SidebarHeader />
                             <div
                                 role="list"
