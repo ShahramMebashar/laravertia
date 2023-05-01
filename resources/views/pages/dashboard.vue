@@ -8,7 +8,5 @@ defineLayout(AuthLayout)
 <template>
     <Head title="Dashboard" />
 
-    <div class="mx-auto max-w-4xl p-6 lg:p-8">
-        My Date
-    </div>
+    <div class="mx-auto max-w-4xl p-6 lg:p-8">My Date</div>
 </template>

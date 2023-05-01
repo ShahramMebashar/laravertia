@@ -2,7 +2,6 @@
 import SidebarMobile from "./sidebar-mobile.vue"
 import SidebarDesktop from "./sidebar-desktop.vue"
 import type { SidebarNavigationItem, SidebarProps } from "./sidebar"
-import { Cog6ToothIcon } from "@heroicons/vue/24/outline"
 import SidebarNavigationList from "./sidebar-navigation-list.vue"
 import {
     CalendarIcon,
@@ -30,7 +29,11 @@ const navigation: SidebarNavigationItem[] = [
         children: [
             { name: "Nested 01", href: "#", current: false },
             { name: "Nested 01", href: "#", current: false },
-            { name: "Nested 01", href: "#", current: false },
+            {
+                name: "Nested 01",
+                href: "#",
+                current: false,
+            },
             { name: "Nested 01", href: "#", current: false },
         ],
     },
@@ -55,16 +58,6 @@ const handleClose = () => {
         props.onClose()
     }
 }
-
-const settings: SidebarNavigationItem[] = [
-    {
-        name: "Settings",
-        icon: Cog6ToothIcon,
-        href: "/settings",
-        current: false,
-        children: [],
-    },
-]
 </script>
 <template>
     <SidebarMobile
