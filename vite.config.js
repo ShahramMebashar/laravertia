@@ -5,12 +5,9 @@ import inertiaLayout from "momentum-layout"
 import eslintPlugin from "vite-plugin-eslint"
 import path from "path"
 import { watch } from "vite-plugin-watch"
+import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig({
-    server: {
-        https: true,
-        host: 'yana.test',
-    },
     resolve: {
         alias: {
             "@/utils": path.resolve("./resources/scripts/utils"),
@@ -22,12 +19,16 @@ export default defineConfig({
             input: "resources/scripts/app.ts",
             refresh: true,
         }),
-        vue({
-            template: {
-                transformAssetUrls: {
-                    base: null,
-                    includeAbsolute: false,
-                },
+        VueMacros({
+            plugins: {
+                vue: vue({
+                    template: {
+                        transformAssetUrls: {
+                            base: null,
+                            includeAbsolute: false,
+                        },
+                    },
+                })
             },
         }),
         inertiaLayout(),

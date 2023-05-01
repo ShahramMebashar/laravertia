@@ -11,6 +11,7 @@ module.exports = {
         './resources/views/**/*.blade.php',
         "./resources/views/**/*.vue",
         './node_modules/@flavorly/vanilla-components/dist/presets/tailwind/all.json', // for vanilla components
+        "./node_modules/vue-tailwind-datepicker/**/*.js", // for vue-tailwind-datepicker
     ],
 
     theme: {
@@ -19,7 +20,9 @@ module.exports = {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                primary: colors.blue
+                primary: colors.indigo,
+                "vtd-primary": colors.indigo, // Light mode Datepicker color
+                "vtd-secondary": colors.gray, // Dark mode Datepicker color
             }
         },
     },

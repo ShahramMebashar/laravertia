@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "allowJs": true,
         "module": "ESNext",
         "moduleResolution": "Node",
         "strict": true,
@@ -8,12 +9,15 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "esModuleInterop": true,
+        "verbatimModuleSyntax": false,
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitThis": true,
+        "skipLibCheck": true,
         "lib": [
             "ESNext",
-            "DOM"
+            "DOM",
+            "DOM.Iterable"
         ],
-        "skipLibCheck": true,
-        "allowJs": true,
         "baseUrl": ".",
         "paths": {
             "@/*": [
@@ -25,12 +29,14 @@
         },
         "types": [
             "vite/client",
-            "momentum-layout/macro"
+            "momentum-layout/macro",
+            "unplugin-vue-macros/macros-global"
         ]
     },
     "include": [
         "resources/**/*.ts",
         "resources/**/*.d.ts",
-        "resources/**/*.vue"
+        "resources/**/*.vue",
+        "resources/**/*.vue.ts",
     ]
 }
