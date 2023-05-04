@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Middleware;
 use Laravertia\Menu\Menu;
+use Laravertia\Menu\MenuBuilder;
 use Laravertia\Menu\MenuItem;
 use Tightenco\Ziggy\Ziggy;
 
@@ -38,17 +39,8 @@ class HandleInertiaRequests extends Middleware
     {
         $state = new SharedData(
             user: Auth::check() ? UserData::from(Auth::user()) : null,
-            menu: Menu::make('default', function ($menu) {
-                $menu->add(
-                    MenuItem::make('Dashboard', '/dashboard', 'HomeIcon')->viewIfCan('viewDashboard'),
-                    MenuItem::make('Dashboard 2', '/dashboard', 'HomeIcon'),
-                    MenuItem::make('About')->add(
-                        MenuItem::make('Child 1', 'asdasd'),
-                        MenuItem::make('Child 2', 'asdsad'),
-                    )
-                    );
-            }
-            )->toArray(),
+            menu: MenuBuilder::build('default'),
+            bottomMenu: MenuBuilder::build('bottom'),
         );
 
 

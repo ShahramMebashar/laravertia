@@ -19,41 +19,9 @@ const emit = defineEmits<{
     (e: "onClose"): void
 }>()
 
-const navigation = usePage().props.menu as SidebarNavigationItem[]
+const mainNavigation = usePage().props.menu as SidebarNavigationItem[]
+const bottomNavigation = usePage().props.bottomMenu as SidebarNavigationItem[]
 
-// const navigation: SidebarNavigationItem[] = [
-//     { name: "Dashboard", href: "/dashboard", icon: HomeIcon, current: true },
-//     { name: "Team", href: "https://laravertia.test/asd", icon: UsersIcon, current: false },
-//     {
-//         name: "Projects",
-//         href: "#",
-//         icon: FolderIcon,
-//         current: false,
-//         children: [
-//             { name: "Nested 01", href: "#", current: false },
-//             { name: "Nested 01", href: "#", current: false },
-//             {
-//                 name: "Nested 01",
-//                 href: "#",
-//                 current: false,
-//             },
-//             { name: "Nested 01", href: "#", current: false },
-//         ],
-//     },
-//     { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-//     {
-//         name: "Reports",
-//         icon: ChartPieIcon,
-//         current: false,
-//         children: [
-//             { name: "Nested 01", href: "#", current: false },
-//             { name: "Nested 01", href: "#", current: false },
-//             { name: "Nested 01", href: "#", current: false },
-//             { name: "Nested 01", href: "#", current: false },
-//         ],
-//     },
-//     { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-// ]
 
 const handleClose = () => {
     emit("onClose")
@@ -68,11 +36,17 @@ const handleClose = () => {
         @on-close="handleClose">
         <SidebarNavigationList
             class="space-y-1"
-            :list="navigation" />
+            :list="mainNavigation" />
+            <SidebarNavigationList
+            class="space-y-1 mt-auto"
+            :list="bottomNavigation" />
     </SidebarMobile>
     <SidebarDesktop>
         <SidebarNavigationList
             class="space-y-1"
-            :list="navigation" />
+            :list="mainNavigation" />
+            <SidebarNavigationList
+            class="space-y-1 mt-auto"
+            :list="bottomNavigation" />
     </SidebarDesktop>
 </template>

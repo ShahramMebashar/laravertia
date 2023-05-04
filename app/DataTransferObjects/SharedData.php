@@ -15,5 +15,6 @@ class SharedData extends Data
          * @var array<\Laravertia\Menu\MenuItem>
          */
         public readonly array $menu = [],
+        public readonly array $bottomMenu = [],
     ) {}
 }
