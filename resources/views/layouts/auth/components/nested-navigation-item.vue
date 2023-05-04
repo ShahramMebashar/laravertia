@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { computed } from "vue"
-import { ChevronRightIcon } from "@heroicons/vue/24/outline"
 import type { SidebarNavigationItem } from "./sidebar"
 import { Link as InertiaLink } from "@inertiajs/vue3"
 
@@ -27,7 +25,7 @@ const iconClasses = $computed<string[]>(() => {
     <li>
         <div class="ps-10">
             <InertiaLink
-                :href="item.href || '#'"
+                :href="item.url || '#'"
                 :class="classNames">
                 <div
                     v-if="item.icon"
@@ -37,7 +35,7 @@ const iconClasses = $computed<string[]>(() => {
                         class="h-4 w-4 shrink-0"
                         aria-hidden="true" />
                 </div>
-                {{ item.name }}
+                {{ item.text }}
             </InertiaLink>
         </div>
     </li>

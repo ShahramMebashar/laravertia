@@ -11,6 +11,7 @@ import {
     HomeIcon,
     UsersIcon,
 } from "@heroicons/vue/24/outline"
+import { usePage } from "@inertiajs/vue3"
 
 const props = defineProps<SidebarProps>()
 
@@ -18,39 +19,41 @@ const emit = defineEmits<{
     (e: "onClose"): void
 }>()
 
-const navigation: SidebarNavigationItem[] = [
-    { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-    { name: "Team", href: "#", icon: UsersIcon, current: false },
-    {
-        name: "Projects",
-        href: "#",
-        icon: FolderIcon,
-        current: false,
-        children: [
-            { name: "Nested 01", href: "#", current: false },
-            { name: "Nested 01", href: "#", current: false },
-            {
-                name: "Nested 01",
-                href: "#",
-                current: false,
-            },
-            { name: "Nested 01", href: "#", current: false },
-        ],
-    },
-    { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-    {
-        name: "Reports",
-        icon: ChartPieIcon,
-        current: false,
-        children: [
-            { name: "Nested 01", href: "#", current: false },
-            { name: "Nested 01", href: "#", current: false },
-            { name: "Nested 01", href: "#", current: false },
-            { name: "Nested 01", href: "#", current: false },
-        ],
-    },
-    { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-]
+const navigation = usePage().props.menu as SidebarNavigationItem[]
+
+// const navigation: SidebarNavigationItem[] = [
+//     { name: "Dashboard", href: "/dashboard", icon: HomeIcon, current: true },
+//     { name: "Team", href: "https://laravertia.test/asd", icon: UsersIcon, current: false },
+//     {
+//         name: "Projects",
+//         href: "#",
+//         icon: FolderIcon,
+//         current: false,
+//         children: [
+//             { name: "Nested 01", href: "#", current: false },
+//             { name: "Nested 01", href: "#", current: false },
+//             {
+//                 name: "Nested 01",
+//                 href: "#",
+//                 current: false,
+//             },
+//             { name: "Nested 01", href: "#", current: false },
+//         ],
+//     },
+//     { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
+//     {
+//         name: "Reports",
+//         icon: ChartPieIcon,
+//         current: false,
+//         children: [
+//             { name: "Nested 01", href: "#", current: false },
+//             { name: "Nested 01", href: "#", current: false },
+//             { name: "Nested 01", href: "#", current: false },
+//             { name: "Nested 01", href: "#", current: false },
+//         ],
+//     },
+//     { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
+// ]
 
 const handleClose = () => {
     emit("onClose")

@@ -3,7 +3,8 @@ import SidebarHeader from "./sidebar-header.vue"
 </script>
 <template>
     <div class="hidden overflow-x-hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
-        <div class="flex grow flex-col gap-y-5 overflow-y-auto overflow-x-hidden border-e pb-4 bg-white dark:bg-gray-950 dark:border-gray-800">
+        <div
+            class="flex grow flex-col gap-y-5 overflow-y-auto overflow-x-hidden border-e bg-white pb-4 dark:border-gray-800 dark:bg-gray-950">
             <SidebarHeader />
             <div
                 role="list"

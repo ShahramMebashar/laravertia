@@ -3,10 +3,10 @@ import type { Component, VNode } from "vue"
 export type SidebarNavigationItemIcon = Component | VNode | SVGElement | string
 
 export interface SidebarNavigationItem {
-    name: string
-    href?: string | null
+    text: string
+    url?: string | null
     icon?: SidebarNavigationItemIcon
-    current: boolean
+    isActive: boolean
     children?: SidebarNavigationItem[]
 }
 

@@ -16,7 +16,7 @@ const props = withDefaults(
     <ul role="list">
         <SidebarNavigationItem
             v-for="item in list"
-            :key="item.name"
+            :key="item.text"
             :is-nested="isNested"
             :item="item" />
     </ul>
